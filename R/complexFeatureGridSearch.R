@@ -56,7 +56,7 @@ performComplexGridSearch <- function(traces,
   # setting a seed is absolutely crutial to ensure reproducible results!
   clusterSetRNGStream(cl,123)
   doSNOW::registerDoSNOW(cl)
-  clusterEvalQ(cl,library(SECprofiler,data.table))
+  clusterEvalQ(cl,library(CCprofiler,data.table))
   data <- parRapply(cl,parameter_grid,
                     FUN = .runGridComplexFeatureFinding,
                     protTraces = traces,
