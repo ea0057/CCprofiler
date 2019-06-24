@@ -70,7 +70,7 @@ findComplexFeatures <- function(traces,
     progress <- function(n) setTxtProgressBar(pb, n)
     opts <- list(progress = progress)
     sw.results <- foreach(i=seq_along(inputComplexes),
-                          .packages=c('data.table', 'SECprofiler'),.options.snow = opts) %dopar% {
+                          .packages=c('data.table', 'CCprofiler'),.options.snow = opts) %dopar% {
                             query_complex_id <- inputComplexes[i]
                             runSlidingWindow(query_complex_id, 
                                              complex_hypothesis=complex_hypothesis,
